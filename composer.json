@@ -1,0 +1,20 @@
+{
+    "name": "osw3/symfony-pagination",
+    "description": "OSW3 Pagination Bundle for Symfony",
+	"type": "symfony-bundle",
+	"authors": [
+		{
+			"name": "Project Contributors",
+			"homepage": "https://github.com/OSW3/symfony-pagination/graphs/contributors"
+		}
+	],
+	"license": "proprietary",
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "OSW3\\SymfonyPagination\\": "src/"
+        }
+    },
+    "require": {}
+}
