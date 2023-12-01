@@ -14,7 +14,17 @@
         </li>
 
 
-        {% for page in 1 .. pages %}
+        {# {% for page in 1 .. pages %}
+        {% if page > 0 %}
+        <li class="page-item {{ current == page or pages == 0 ? 'active' }}">
+            <a class="page-link" href="{{ path(route, url_page|merge({'page': page})) }}" aria-label="Page {{page}}">
+                {{ page }}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %} #}
+
+        {% for page in range %}
         {% if page > 0 %}
         <li class="page-item {{ current == page or pages == 0 ? 'active' }}">
             <a class="page-link" href="{{ path(route, url_page|merge({'page': page})) }}" aria-label="Page {{page}}">
@@ -39,8 +49,3 @@
 
     </ul>
 </nav>
-{# <div>Total Items : {{ total }}</div> #}
-{# <div>Total Pages : {{ pages }}</div> #}
-{# <div>Current Page : {{ current }}</div> #}
-{# <div>Items Per Page : {{ range }}</div> #}
-{# <div>{{ range * current }} / {{ total }}</div> #}

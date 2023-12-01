@@ -35,13 +35,22 @@ class Configuration implements ConfigurationInterface
         $rootNode->children()
 			
 			/**
-			 * Range / Item per page
+			 * Item per page
 			 * --
 			 * 
 			 * @var integer
 			 * @default 10
 			 */
-            ->integerNode('range')->defaultValue(10)->end()
+			->integerNode('per_page')->defaultValue(10)->end()
+				
+			/**
+			 * Range
+			 * --
+			 * 
+			 * @var integer
+			 * @default 10
+			 */
+			->integerNode('range')->defaultValue(9)->min(0)->end()
 			
 			/**
 			 * Default direction for "OrderBy"

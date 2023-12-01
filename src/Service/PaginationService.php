@@ -107,7 +107,7 @@ class PaginationService
      *
      * @var integer
      */
-    private int $range = 0;
+    private int $perPage = 0;
 
     /**
      * List of paginated results
@@ -125,7 +125,7 @@ class PaginationService
         $this->configuration = $container->getParameter(Configuration::NAME);
 
         $this->setMethod('findBy');
-        $this->setRange($this->configuration['range']);
+        $this->setPerPage($this->configuration['per_page']);
     }
 
     public function find(array $sorter=[])
@@ -148,16 +148,16 @@ class PaginationService
         // Init the sorter array
         $this->setSorter();
 
-        // Set Range (items per page)
-        $this->range = $this->range > 0 ? $this->range : $this->getTotal();
-        $range = $this->range;
+        // Set items per page
+        $this->perPage = $this->perPage > 0 ? $this->perPage : $this->getTotal();
+        $perPage = $this->perPage;
 
         // Count total pages
-        $pages = ceil($total / $range);
+        $pages = ceil($total / $perPage);
         $this->setPages($pages);
 
         // Set the Offset
-        $offset = ($this->current * $range) - $range;
+        $offset = ($this->current * $perPage) - $perPage;
         $this->setOffset($offset);
 
         // Set previous page number
@@ -175,7 +175,7 @@ class PaginationService
         $results = $this->fetch(
             $this->criteria, 
             $this->sorter, 
-            $this->range, 
+            $this->perPage, 
             $this->offset
         );
         
@@ -191,13 +191,13 @@ class PaginationService
 
         return $count;
     }
-    private function fetch(array $criteria=[], array $sorter=[], ?int $range=null, ?int $offset=null): array
+    private function fetch(array $criteria=[], array $sorter=[], ?int $perPage=null, ?int $offset=null): array
     {
         $method  = $this->getMethod();
         $results = $this->repository->$method(
             $criteria, 
             $sorter, 
-            $range, 
+            $perPage, 
             $offset
         );
 
@@ -312,19 +312,19 @@ class PaginationService
         return $this->getNext();
     }
 
-    public function setRange(int $range): self
+    public function setPerPage(int $perPage): self
     {
-        $this->range = $range;
+        $this->perPage = $perPage;
 
         return $this;
     }
-    public function getRange(): int
+    public function getPerPage(): int
     {
-        return $this->range;
+        return $this->perPage;
     }
-    public function range(): int
+    public function perPage(): int
     {
-        return $this->getRange();
+        return $this->getPerPage();
     }
 
     private function setSorter(): self
