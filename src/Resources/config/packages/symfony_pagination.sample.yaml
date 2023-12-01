@@ -6,7 +6,15 @@ osw3_symfony_pagination:
     ## @var integer
     ## @default 10
     ## 
-    range: 12
+    per_page: 6
+
+    ## Range buttons
+    ## --
+    ## 
+    ## @var integer
+    ## @default 9
+    ## 
+    range: 9
     
     ## Default direction for "OrderBy"
     ## --
