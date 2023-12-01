@@ -2,20 +2,26 @@
 
 ## Install
 
+### Instal the bundle
+
 ```shell
 comoser require osw3/symfony-pagination
 ```
 
-## Configure
+### Prepare for update
 
-Add the bundle in the  `config/bundle.php` file.
+In your composer.json file, change the line of the dependency to prepare futures updates of the bundle.
+
+```json
+"osw3/symfony-pagination": "*",
+```
+
+### Enable the bundle
+
+Add the bundle in the `config/bundle.php` file.
 
 ```php
 return [
     OSW3\SymfonyPagination\OSW3SymfonyPaginationBundle::class => ['all' => true],
 ];
 ```
-
-## Usage
-
-## Doc
