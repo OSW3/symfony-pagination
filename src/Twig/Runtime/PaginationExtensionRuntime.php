@@ -75,20 +75,22 @@ class PaginationExtensionRuntime implements RuntimeExtensionInterface
         $url_page    = array_merge($this->request->query->all(), $sorter);
 
         $range       = $this->configuration['range'];
-        $range_split = (int) floor($range / 2);
-        $range_start = $current - $range_split;
-        $range_start = $range_start <= 1 ? 1 : $range_start;
-        $range_end   = $current + $range_split;
-        $range_end   = $range_end >= $last ? $last : $range_end;
+        $range_start = 1;
+        $range_end   = $last;
 
-        if ($range_start > $last - $range) 
+        if ($range > 0)
         {
-            $range_start = $last - $range + 1;
+            $range_split = (int) floor($range / 2);
+    
+            $range_start = $current - $range_split;
+            $range_start = $range_start <= 1 ? 1 : $range_start;
+            $range_start = $range_start > $last - $range ? $last - $range + 1 : $range_start;
+    
+            $range_end   = $current + $range_split;
+            $range_end   = $range_end >= $last ? $last : $range_end;
+            $range_end   = $range_end < $range ? $range : $range_end;
         }
-        if ($range_end < $range)
-        {
-            $range_end = $range;
-        }
+
         $range       = range($range_start, $range_end);
 
         $options = array_merge([
