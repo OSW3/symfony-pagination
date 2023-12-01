@@ -1,1 +1,26 @@
 osw3_symfony_pagination:
+
+    ## Items per page
+    ## --
+    ## 
+    ## @var integer
+    ## @default 10
+    ## 
+    range: 12
+    
+    ## Default direction for "OrderBy"
+    ## --
+    ## 
+    ## @var enum ASC | DESC
+    ## @default ASC
+    ## 
+    direction: ASC
+
+    ## Empty strategy
+    ## --
+    ## Show pagination block if no results ?
+    ## 
+    ## @var enum show | hide
+    ## @default hide
+    ## 
+    empty: hide

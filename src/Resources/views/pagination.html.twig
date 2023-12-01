@@ -1,0 +1,46 @@
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+
+        <li class="page-item {{ current == 1 or pages == 0 ? 'disabled' }}">
+            <a class="page-link" href="{{ url_first }}" aria-label="{{ aria_label_first }}">
+                <span aria-hidden="true">{{ label_first | raw }}</span>
+            </a>
+        </li>
+
+        <li class="page-item {{ current == 1 or pages == 0 ? 'disabled' }}">
+            <a class="page-link" href="{{ url_prev }}" aria-label="{{ aria_label_previous }}">
+                <span aria-hidden="true">{{ label_previous | raw }}</span>
+            </a>
+        </li>
+
+
+        {% for page in 1 .. pages %}
+        {% if page > 0 %}
+        <li class="page-item {{ current == page or pages == 0 ? 'active' }}">
+            <a class="page-link" href="{{ path(route, url_page|merge({'page': page})) }}" aria-label="Page {{page}}">
+                {{ page }}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+
+        <li class="page-item {{ current == last or pages == 0 ? 'disabled' }}">
+            <a class="page-link" href="{{ url_next }}" aria-label="{{ aria_label_next }}">
+                <span aria-hidden="true">{{ label_next | raw }}</span>
+            </a>
+        </li>
+
+        <li class="page-item {{ current == last or pages == 0 ? 'disabled' }}">
+            <a class="page-link" href="{{ url_last }}" aria-label="{{ aria_label_last }}">
+                <span aria-hidden="true">{{ label_last | raw }}</span>
+            </a>
+        </li>
+
+    </ul>
+</nav>
+{# <div>Total Items : {{ total }}</div> #}
+{# <div>Total Pages : {{ pages }}</div> #}
+{# <div>Current Page : {{ current }}</div> #}
+{# <div>Items Per Page : {{ range }}</div> #}
+{# <div>{{ range * current }} / {{ total }}</div> #}

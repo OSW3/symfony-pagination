@@ -30,6 +30,39 @@ class Configuration implements ConfigurationInterface
 	{
 		$builder = new TreeBuilder( self::NAME );
 		$rootNode = $builder->getRootNode();
+
+
+        $rootNode->children()
+			
+			/**
+			 * Range / Item per page
+			 * --
+			 * 
+			 * @var integer
+			 * @default 10
+			 */
+            ->integerNode('range')->defaultValue(10)->end()
+			
+			/**
+			 * Default direction for "OrderBy"
+			 * --
+			 * 
+			 * @var enum ASC | DESC
+			 * @default ASC
+			 */
+            ->enumNode('direction')->values(["ASC", "DESC"])->defaultValue("ASC")->end()
+			
+			/**
+			 * No result strategy
+			 * --
+			 * Show pagination block if no results ?
+			 * 
+			 * @var enum show | hide
+			 *  @default hide
+			 */
+            ->enumNode('empty')->values(["show", "hide"])->defaultValue("hide")->end()
+
+        ->end();
 		
 		return $builder;
 	}

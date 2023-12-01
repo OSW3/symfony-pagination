@@ -47,8 +47,8 @@ class OSW3SymfonyPaginationExtension extends Extension implements PrependExtensi
 	 */
 	public function prepend(ContainerBuilder $container)
 	{
-        // $twigConfig = [];
-        // $twigConfig['paths'][__DIR__.'/../Resources/views'] = "OSW3Api";
-        // $container->prependExtensionConfig('twig', $twigConfig);
+        $twigConfig = [];
+        $twigConfig['paths'][__DIR__.'/../Resources/views'] = "Pagination";
+        $container->prependExtensionConfig('twig', $twigConfig);
 	}
 }
