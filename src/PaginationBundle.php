@@ -1,12 +1,12 @@
 <?php 
-namespace OSW3\SymfonyPagination;
+namespace OSW3\Pagination;
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use OSW3\SymfonyPagination\DependencyInjection\Configuration;
+use OSW3\Pagination\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class OSW3SymfonyPaginationBundle extends Bundle 
+class PaginationBundle extends Bundle 
 {
     // public function getPath(): string
     // {

@@ -1,9 +1,9 @@
 <?php 
-namespace OSW3\SymfonyPagination\Service;
+namespace OSW3\Pagination\Service;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use OSW3\SymfonyPagination\DependencyInjection\Configuration;
+use OSW3\Pagination\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 

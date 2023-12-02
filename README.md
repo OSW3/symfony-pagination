@@ -24,7 +24,7 @@ Add the bundle in the `config/bundle.php` file.
 
 ```php
 return [
-    OSW3\SymfonyPagination\OSW3SymfonyPaginationBundle::class => ['all' => true],
+    OSW3\Pagination\PaginationBundle::class => ['all' => true],
 ];
 ```
 

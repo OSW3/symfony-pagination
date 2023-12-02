@@ -1,11 +1,11 @@
 <?php
 
-namespace OSW3\SymfonyPagination\Twig\Extension;
+namespace OSW3\Pagination\Twig\Extension;
 
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 use Twig\Extension\AbstractExtension;
-use OSW3\SymfonyPagination\Twig\Runtime\PaginationExtensionRuntime;
+use OSW3\Pagination\Twig\Runtime\PaginationExtensionRuntime;
 
 class PaginationExtension extends AbstractExtension
 {

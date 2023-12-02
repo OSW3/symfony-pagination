@@ -1,14 +1,14 @@
 <?php 
-namespace OSW3\SymfonyPagination\DependencyInjection;
+namespace OSW3\Pagination\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
-use OSW3\SymfonyPagination\DependencyInjection\Configuration;
+use OSW3\Pagination\DependencyInjection\Configuration;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
-class OSW3SymfonyPaginationExtension extends Extension implements PrependExtensionInterface
+class PaginationExtension extends Extension implements PrependExtensionInterface
 {
 	/**
 	 * Bundle configuration Injection

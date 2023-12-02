@@ -1,13 +1,13 @@
 <?php
 
-namespace OSW3\SymfonyPagination\Twig\Runtime;
+namespace OSW3\Pagination\Twig\Runtime;
 
 use Twig\Environment;
 use Symfony\Component\HttpFoundation\Request;
 use Twig\Extension\RuntimeExtensionInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
-use OSW3\SymfonyPagination\DependencyInjection\Configuration;
-use OSW3\SymfonyPagination\Service\PaginationService;
+use OSW3\Pagination\DependencyInjection\Configuration;
+use OSW3\Pagination\Service\PaginationService;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
