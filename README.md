@@ -53,10 +53,10 @@ public function index(BookRepository $bookRepository, PaginationService $paginat
     $books = $repository->find(['title' => 'ASC']);
 
     // B. or Find entities based on criteria and optional sorter
-    $books = $repository->findBy(
-        ['author' => "John"],
-        ['title' => 'ASC']
-    );
+    // $books = $repository->findBy(
+    //     ['author' => "John"],
+    //     ['title' => 'ASC']
+    // );
 
 
     /// 3. Render the view

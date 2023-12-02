@@ -31,7 +31,6 @@ class Configuration implements ConfigurationInterface
 		$builder = new TreeBuilder( self::NAME );
 		$rootNode = $builder->getRootNode();
 
-
         $rootNode->children()
 			
 			/**
