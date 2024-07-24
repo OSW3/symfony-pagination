@@ -1,7 +1,6 @@
 <?php
 
 use OSW3\Pagination\Enum\DisplayStates;
-use OSW3\Pagination\Enum\SortDirection;
 use OSW3\Pagination\Enum\SortDirections;
 
 return static function($definition)
